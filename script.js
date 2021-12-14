@@ -1,12 +1,26 @@
 let fs = require('fs');
-let depths = fs.readFileSync('input.txt').toString().split("\n");
+let depths = fs.readFileSync('input.txt').toString().split("\n").map((x) => parseInt(x));
 
+//part one
 let counter = 0;
-counter = counter;
 
-for (i = 0; i < depths.length; i++) {
+// for (i = 0; i < depths.length; i++) {
 
-    if(parseInt(depths[i]) < parseInt(depths [i + 1])) {
+//     if(parseInt(depths[i]) < parseInt(depths [i + 1])) {
+
+//         counter++;
+//     }
+// }
+
+// console.log(counter);
+
+//part two
+for (let i = 3; i < depths.length; i++) {
+
+    let current = (depths[i - 1] + depths[i - 2] + depths[i - 3]);
+    let next = (depths[i] + depths[i - 1] + depths[i - 2]);
+
+    if (next > current) {
 
         counter++;
     }
