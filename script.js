@@ -17,8 +17,8 @@ let counter = 0;
 //part two
 for (let i = 3; i < depths.length; i++) {
 
-    let current = (depths[i - 1] + depths[i - 2] + depths[i - 3]);
-    let next = (depths[i] + depths[i - 1] + depths[i - 2]);
+    let current = depths[i - 3];
+    let next = depths[i];
 
     if (next > current) {
 
